@@ -12,10 +12,19 @@ image-version: 42 # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - Hack
+        - JetBrainsMono
   - type: files
     files:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+
+  - type: bling
+    install:
+      - 1password
 
   - type: dnf
     repos:
